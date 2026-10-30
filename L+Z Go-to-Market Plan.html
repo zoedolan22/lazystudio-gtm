@@ -1,0 +1,426 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>L+Z Go-to-Market Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Layout: one parchment page in a wide editorial column. Heavy caps headlines and black label boxes follow the deck. One periwinkle panel holds the retainer math. Rose appears on the target figure and the last phase only. Single look by design: the page is Parchment, as requested. */
+:root{
+  --parchment:#FAF5EF;
+  --onyx:#000F08;
+  --blue:#17364F;
+  --peri:#8584C2;
+  --rose:#FF70A6;
+  --bg:#FAF5EF;
+  --ink:#000F08;
+  --ink-soft:#33485B;
+  --rule:rgba(23,54,79,.22);
+  --panel:#F1EAE0;
+  --font:"Figtree","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+.page{max-width:1080px;margin:0 auto;padding-block:clamp(24px,5vw,56px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.tag{display:inline-block;background:var(--onyx);color:var(--parchment);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:.55em .9em;line-height:1.1}
+
+/* Hero */
+.hero{padding-block:clamp(4px,2vw,16px) clamp(32px,5vw,56px)}
+h1{font-weight:900;text-transform:uppercase;letter-spacing:.02em;line-height:.98;font-size:clamp(2.3rem,9.4vw,6.4rem);color:var(--onyx);margin:22px 0 18px;text-wrap:balance}
+.nw{white-space:nowrap}
+.hero-sub{font-size:clamp(1.1rem,2.2vw,1.4rem);line-height:1.4;max-width:36em;font-weight:500;color:var(--blue);margin:0}
+.toc{display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;padding:0;list-style:none;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 28px;margin-top:clamp(28px,4vw,44px);border-top:3px solid var(--onyx)}
+.fact{padding:18px 0 22px}
+.fact .k{font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.fact .v{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;line-height:1.05;text-transform:uppercase;letter-spacing:.02em;margin-top:6px}
+.fact .s{font-size:.95rem;color:var(--ink-soft);margin-top:8px}
+.hl{background:linear-gradient(transparent 58%,var(--rose) 58%)}
+
+/* Sections */
+.block{padding-block:clamp(36px,6vw,72px);border-top:1px solid var(--rule);scroll-margin-top:12px}
+h2{font-weight:900;text-transform:uppercase;letter-spacing:.02em;line-height:1.02;font-size:clamp(1.9rem,5vw,3.3rem);color:var(--blue);max-width:16ch;margin:0 0 22px;text-wrap:balance}
+h3{font-size:1.15rem;font-weight:800;line-height:1.2;margin:40px 0 12px;color:var(--onyx)}
+.lead{font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.4;font-weight:500;max-width:34em;margin:0 0 22px}
+p{max-width:62ch;margin:0 0 1em}
+.list{padding-left:1.15em;margin:0 0 1em;max-width:62ch}
+.list li{margin:.45em 0;padding-left:.2em}
+.list li::marker{color:var(--blue)}
+.note{font-size:.92rem;color:var(--ink-soft);max-width:62ch}
+
+/* Tables */
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:10px 16px 10px 0;border-bottom:2px solid var(--onyx);vertical-align:bottom}
+td{padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.first td:first-child{width:11rem;font-weight:800}
+.dates td:first-child{width:10rem}
+.stack{max-width:900px}
+@media (max-width:640px){
+  .stack thead{position:absolute;left:-9999px}
+  .stack,.stack tbody,.stack tr,.stack td{display:block;width:100%}
+  .stack tr{padding:14px 0;border-bottom:1px solid var(--rule)}
+  .stack td{padding:3px 0;border:0}
+  .first td:first-child,.dates td:first-child{width:100%}
+  .stack td::before{content:attr(data-label);display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:800}
+}
+
+/* Retainer panel */
+.money{background:var(--peri);color:var(--onyx);border-radius:12px;padding:clamp(18px,3vw,32px);margin:28px 0}
+.money table{min-width:620px}
+.money th{color:var(--onyx);border-bottom-color:var(--onyx)}
+.money td{border-bottom-color:rgba(0,15,8,.3);font-size:1.05rem}
+.money .num{font-weight:900;font-size:1.6rem;line-height:1.1}
+.money .tag{margin-bottom:16px}
+.money .cap{font-size:.92rem;margin:16px 0 0;max-width:68ch}
+.chip{display:inline-block;margin-left:10px;background:var(--onyx);color:var(--parchment);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.35em .6em;vertical-align:middle}
+
+/* Timeline */
+.tl{margin-top:30px}
+.weeks,.bar{display:grid;grid-template-columns:repeat(13,1fr)}
+.weeks span{font-size:.72rem;color:var(--ink-soft);border-left:1px solid var(--rule);padding:0 0 8px 6px;white-space:nowrap}
+.weeks b{display:block;color:var(--ink);font-weight:800;letter-spacing:.06em}
+.ph{padding:14px 12px;min-height:56px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;line-height:1.15}
+.ph1{background:var(--onyx);color:var(--parchment);grid-column:span 2}
+.ph2{background:var(--peri);color:var(--onyx);grid-column:span 5}
+.ph3{background:var(--blue);color:var(--parchment);grid-column:span 3}
+.ph4{background:var(--rose);color:var(--onyx);grid-column:span 3}
+@media (max-width:760px){.tl{display:none}}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px 24px;margin-top:28px}
+.phase{border-top:6px solid var(--c);padding-top:14px}
+.phase h4{margin:0 0 4px;font-size:1.05rem;font-weight:900;text-transform:uppercase;letter-spacing:.03em;line-height:1.15}
+.phase .when{font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
+.phase p{font-size:.98rem;margin:0}
+
+/* Funnel */
+.funnel{display:grid;gap:10px;max-width:760px;margin:6px 0 14px}
+.f-row{display:grid;grid-template-columns:8.5rem 1fr;align-items:center;gap:14px}
+.f-label{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.f-track{display:flex;align-items:center;gap:10px}
+.f-bar{flex:0 0 calc((100% - 3.2rem) * var(--p));height:32px;background:var(--peri)}
+.f-row:last-child .f-bar{background:var(--onyx)}
+.f-num{font-weight:900;font-size:1.3rem;width:3rem}
+@media (max-width:480px){.f-row{grid-template-columns:1fr;gap:4px}}
+
+/* Roles */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:8px}
+.col{border-top:3px solid var(--onyx);padding-top:16px}
+.col h3{margin:0 0 4px;font-size:1.6rem;font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+.col .hrs{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}
+
+/* Message and checklist */
+.msg{background:var(--panel);border:1px solid var(--onyx);padding:20px;max-width:640px;margin:22px 0 14px}
+.msg p{margin:14px 0 18px;font-size:1.02rem}
+.btn{font:inherit;font-weight:800;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;background:var(--onyx);color:var(--parchment);border:0;padding:.75em 1.1em;cursor:pointer}
+.todo{list-style:none;margin:0;padding:0;max-width:760px}
+.todo li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.todo li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border:2px solid var(--onyx)}
+.todo b{font-weight:800}
+.foot{margin-top:48px;padding-top:16px;border-top:3px solid var(--onyx);font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+</style>
+
+<div class="page">
+
+<header class="hero">
+  <span class="tag">L+Z Studio</span>
+  <h1><span class="nw">Go-to-market</span> plan</h1>
+  <p class="hero-sub">A 90-day plan for winning your first clients, covering 2 November 2026 to 30 January 2027.</p>
+  <ul class="toc">
+    <li><a href="#target">Target</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#offer">Offer</a></li>
+    <li><a href="#outreach">Outreach</a></li>
+    <li><a href="#ninety">90 days</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#decisions">Decisions</a></li>
+    <li><a href="#week">This week</a></li>
+  </ul>
+  <div class="glance">
+    <div class="fact"><div class="k">Revenue target</div><div class="v"><span class="hl">R45,000</span> a month</div><div class="s">R20,000 each, plus R5,000 for tax and tools.</div></div>
+    <div class="fact"><div class="k">Clients needed</div><div class="v">5 to 9</div><div class="s">Depends on the retainer you set.</div></div>
+    <div class="fact"><div class="k">First checkpoint</div><div class="v">3 clients by 18 Dec</div><div class="s">After 40 audits sent by 11 December.</div></div>
+    <div class="fact"><div class="k">Time available</div><div class="v">60 hours a week</div><div class="s">Liam 40, Zoë 20.</div></div>
+  </div>
+</header>
+
+<section class="block" id="target">
+  <h2>What it takes to earn R20,000 each</h2>
+  <p class="lead">You need R45,000 in monthly revenue. That pays R20,000 to each of you and leaves R5,000 as a working allowance for tax and software. An accountant can confirm the real figure.</p>
+  <p>Percentage fees on R5,000 to R12,000 of ad spend are too small. A 20% fee on R8,000 earns R1,600 a client, which takes about 28 clients to reach R45,000. A flat monthly retainer that includes design, copy and reporting gets you there with far fewer.</p>
+
+  <div class="money">
+    <span class="tag">Retainer math</span>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Monthly retainer</th><th>Clients for R45,000</th><th>Hours per client each month</th><th>Retainer as a share of R8,000 ad spend</th></tr></thead>
+        <tbody>
+          <tr><td class="num">R5,000 <span class="chip">Start here</span></td><td class="num">9</td><td class="num">29</td><td class="num">63%</td></tr>
+          <tr><td class="num">R7,500</td><td class="num">6</td><td class="num">43</td><td class="num">94%</td></tr>
+          <tr><td class="num">R10,000</td><td class="num">5</td><td class="num">52</td><td class="num">125%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cap">Hours assume 60 hours a week, about 260 a month. Selling, admin and the studio's own content use some of them, so plan on fewer. The R10,000 row rounds 4.5 clients up to 5.</p>
+  </div>
+
+  <p>Start near R5,000. At R8,000 of ad spend, a R7,500 retainer costs the client almost as much as the ads, which is a hard sale to a new brand. Keep each account near 30 hours, then raise revenue per client with add-ons and bigger budgets once results show. Set the price in week 1.</p>
+</section>
+
+<section class="block" id="clients">
+  <h2>Who you sell to</h2>
+  <p class="lead">B2C product brands, small to medium, Cape Town first, spending R5,000 to R12,000 a month on ads. More is better.</p>
+  <p>Your product wishlist is supplements, skincare, homeware, coffee and locally made products. Pick the first 40 prospects from those categories.</p>
+  <h3>Where the 40 come from</h3>
+  <ul class="list">
+    <li><b>Meta Ad Library.</b> Search South Africa, active ads, one category at a time. A brand already running ads has a budget and gives you something to review.</li>
+    <li><b>Liam's events world.</b> Bars, venues, promoters, coffee shops, and the drinks and clothing brands that sponsor events.</li>
+    <li><b>Zoë's network.</b> Founders and marketers you know outside your current agency's clients.</li>
+  </ul>
+  <p>Liam builds 25 of the 40 and Zoë builds 15. The list is due Wednesday 11 November.</p>
+  <p>Liam's property marketing background also fits estate agents and developers, who run lead ads on Meta. Take one property client in the first 90 days if the chance comes, because Liam has two years of agency work to point to there.</p>
+</section>
+
+<section class="block" id="offer">
+  <h2>What you sell</h2>
+  <p class="lead">A monthly Meta ads retainer with strategy, copy, design and reporting for one flat fee.</p>
+  <div class="cols">
+    <div>
+      <h3 style="margin-top:0">Included in every retainer</h3>
+      <ul class="list">
+        <li>Strategy and objective setting</li>
+        <li>Campaign setup and management</li>
+        <li>Copywriting for every ad</li>
+        <li>Ad design built on paid best practice</li>
+        <li>Tracking checked before launch</li>
+        <li>One planned test a month</li>
+        <li>A monthly report that ends in decisions</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-top:0">Added later</h3>
+      <ul class="list">
+        <li>LinkedIn ads, TikTok ads and Google Ads, written and run by you</li>
+        <li>Digital marketing strategy and consulting</li>
+        <li>Copywriting for all content</li>
+        <li>SEO optimisation</li>
+        <li>Landing page optimisation</li>
+      </ul>
+      <p class="note">Price add-ons after your first two clients, once you know how long each takes.</p>
+    </div>
+  </div>
+  <h3>Terms to set in week 1</h3>
+  <table class="stack first">
+    <thead><tr><th>Term</th><th>Proposal</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Term">Ad accounts</td><td data-label="Proposal">The client owns the ad account and pays Meta directly. You work through partner access in the client's Meta business account.</td></tr>
+      <tr><td data-label="Term">Month one</td><td data-label="Proposal">Invoiced before work starts.</td></tr>
+      <tr><td data-label="Term">Notice</td><td data-label="Proposal">30 days.</td></tr>
+      <tr><td data-label="Term">Founding rate</td><td data-label="Proposal">Two clients pay a reduced retainer for 90 days in return for a case study and a testimonial. The standard rate starts in month four, written into the contract.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="block" id="outreach">
+  <h2>How clients find you</h2>
+  <p class="lead">Every prospect follows the same path: a free audit, a call, then a proposal.</p>
+  <table class="stack first">
+    <thead><tr><th>Stage</th><th>What happens</th><th>Who</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Stage">Awareness</td><td data-label="What happens">Liam sends the audit message to a prospect from the list. He also posts weekly on LinkedIn with one result or one test per post, and the studio posts one test a month on Instagram.</td><td data-label="Who">Liam</td></tr>
+      <tr><td data-label="Stage">Interest</td><td data-label="What happens">The prospect receives a one-page audit built from their public Meta ads, their website and a pixel check.</td><td data-label="Who">Liam builds it, Zoë reviews it</td></tr>
+      <tr><td data-label="Stage">Conversation</td><td data-label="What happens">A 30-minute audit call. You walk through the audit and answer questions.</td><td data-label="Who">Both</td></tr>
+      <tr><td data-label="Stage">Client</td><td data-label="What happens">Proposal with scope, package and price. Then onboarding for access, goals and assets, the launch, and check-ins twice a month for two months, followed by a monthly report meeting.</td><td data-label="Who">Both</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The first message</h3>
+  <div class="msg">
+    <span class="tag">Audit offer</span>
+    <p id="msg-text">Hi [name], I looked at the Meta ads [brand] is running and wrote a one-page review of what works, three fixes and one test to try next. It's free. Want me to send it over? Liam, L+Z Studio</p>
+    <button class="btn" id="copy-msg" type="button">Copy message</button>
+  </div>
+  <p class="note">Replace each bracket with something specific from their ads. Liam sends it, since he built the audit.</p>
+
+  <h3>Proof to have ready by 13 November</h3>
+  <ul class="list">
+    <li>One case study from Meta ads Liam has run, with spend, result and cost per result. Get permission before using any client's numbers.</li>
+    <li>A new LinkedIn headline for Liam that says what he sells. A draft: Meta ads and creative for Cape Town product brands, L+Z Studio. Fix the end dates on Open Signal and Sol Pillars if both continue.</li>
+    <li>The one-page audit template.</li>
+  </ul>
+</section>
+
+<section class="block" id="ninety">
+  <h2>The first 90 days</h2>
+  <p class="lead">Two weeks of setup, five weeks of audits and calls, a holiday window, then three weeks to reach five clients.</p>
+
+  <div class="tl" aria-hidden="true">
+    <div class="weeks">
+      <span><b>W1</b>2 Nov</span><span><b>W2</b>9 Nov</span><span><b>W3</b>16 Nov</span><span><b>W4</b>23 Nov</span><span><b>W5</b>30 Nov</span><span><b>W6</b>7 Dec</span><span><b>W7</b>14 Dec</span><span><b>W8</b>21 Dec</span><span><b>W9</b>28 Dec</span><span><b>W10</b>4 Jan</span><span><b>W11</b>11 Jan</span><span><b>W12</b>18 Jan</span><span><b>W13</b>25 Jan</span>
+    </div>
+    <div class="bar">
+      <div class="ph ph1">Set up</div>
+      <div class="ph ph2">First audits and calls</div>
+      <div class="ph ph3">Holiday window</div>
+      <div class="ph ph4">Scale to five</div>
+    </div>
+  </div>
+
+  <div class="phases">
+    <div class="phase" style="--c:var(--onyx)">
+      <h4>Set up</h4>
+      <p class="when">Weeks 1 to 2 · 2 to 13 November</p>
+      <p>Register the company, sign the agreement, finish the contract and the audit template, and build the list of 40.</p>
+    </div>
+    <div class="phase" style="--c:var(--peri)">
+      <h4>First audits and calls</h4>
+      <p class="when">Weeks 3 to 7 · 16 November to 18 December</p>
+      <p>Send 10 audits a week. Black Friday on 27 November gives product brands a reason to start now. Aim for 2 clients by 11 December and 3 by 18 December.</p>
+    </div>
+    <div class="phase" style="--c:var(--blue)">
+      <h4>Holiday window</h4>
+      <p class="when">Weeks 8 to 10 · 21 December to 8 January</p>
+      <p>Deliver for the first clients and send their first monthly reports. Keep 5 audits a week going.</p>
+    </div>
+    <div class="phase" style="--c:var(--rose)">
+      <h4>Scale to five</h4>
+      <p class="when">Weeks 11 to 13 · 11 to 29 January</p>
+      <p>Back to 10 audits a week, with case studies in every message. Aim for 5 clients signed by 29 January.</p>
+    </div>
+  </div>
+
+  <h3>Checkpoints</h3>
+  <table class="stack first dates">
+    <thead><tr><th>Date</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Date">Fri 6 Nov</td><td data-label="Target">Price, agreement terms and Liam's income plan decided.</td></tr>
+      <tr><td data-label="Date">Wed 11 Nov</td><td data-label="Target">List of 40 prospects built.</td></tr>
+      <tr><td data-label="Date">Fri 13 Nov</td><td data-label="Target">Company registered, bank account open, contract and audit template ready.</td></tr>
+      <tr><td data-label="Date">Mon 16 Nov</td><td data-label="Target">First 10 audits sent.</td></tr>
+      <tr><td data-label="Date">Fri 27 Nov</td><td data-label="Target">20 audits sent, first calls held, first proposal out.</td></tr>
+      <tr><td data-label="Date">Fri 11 Dec</td><td data-label="Target">40 audits sent, 2 clients signed.</td></tr>
+      <tr><td data-label="Date">Fri 18 Dec</td><td data-label="Target">3 clients signed.</td></tr>
+      <tr><td data-label="Date">Fri 29 Jan</td><td data-label="Target">5 clients signed. Revenue is R25,000 a month at R5,000 retainers or R37,500 at R7,500, before any founding discount.</td></tr>
+      <tr><td data-label="Date">Fri 26 Mar</td><td data-label="Target">9 clients at R5,000 or 6 at R7,500, which is R45,000 a month.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>What 40 audits should produce</h3>
+  <div class="funnel">
+    <div class="f-row"><span class="f-label">Audits sent</span><div class="f-track"><div class="f-bar" style="--p:1"></div><span class="f-num">40</span></div></div>
+    <div class="f-row"><span class="f-label">Calls booked</span><div class="f-track"><div class="f-bar" style="--p:.25"></div><span class="f-num">10</span></div></div>
+    <div class="f-row"><span class="f-label">Clients signed</span><div class="f-track"><div class="f-bar" style="--p:.075"></div><span class="f-num">3</span></div></div>
+  </div>
+  <p class="note">This assumes 1 in 4 audits books a call and 1 in 3 calls signs. Replace both rates with your own after the first 10 audits. At these rates each client takes about 12 audits, so 9 clients take about 108. The checkpoints above sit below what the funnel suggests, to allow for slow replies, the holiday window and rates that turn out lower.</p>
+
+  <h3>Numbers to update every Friday</h3>
+  <table class="stack first">
+    <thead><tr><th>Number</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Number">Audits sent</td><td data-label="Target">10 a week in outreach weeks.</td></tr>
+      <tr><td data-label="Number">Calls held</td><td data-label="Target">2 to 3 a week.</td></tr>
+      <tr><td data-label="Number">Proposals sent</td><td data-label="Target">1 a week.</td></tr>
+      <tr><td data-label="Number">Hours per account</td><td data-label="Target">Under 30 a month at R5,000 retainers.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="block" id="roles">
+  <h2>Who does what</h2>
+  <p class="lead">Liam runs outreach and delivery. Zoë runs strategy and reviews what goes out.</p>
+  <div class="cols">
+    <div class="col">
+      <h3>Liam</h3>
+      <p class="hrs">40 hours a week</p>
+      <ul class="list">
+        <li>Builds the prospect list, sends the messages and builds each audit</li>
+        <li>Designs and writes the ads</li>
+        <li>Builds and manages campaigns</li>
+        <li>Writes the monthly reports</li>
+        <li>Posts weekly on LinkedIn</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Zoë</h3>
+      <p class="hrs">20 hours a week, alongside her current job</p>
+      <ul class="list">
+        <li>Sets strategy and objectives for each account</li>
+        <li>Reviews every audit before it goes out</li>
+        <li>Joins audit calls and writes proposals with Liam</li>
+        <li>Writes the decisions section of each monthly report</li>
+        <li>Drafts the contract terms and pricing for both of you to agree</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:28px">Both of you are on every account, as the deck promises. Monday, 30 minutes: set the week's targets. Friday, 15 minutes: update the numbers.</p>
+</section>
+
+<section class="block" id="decisions">
+  <h2>Decide this week</h2>
+  <p class="lead">Six decisions hold up the first audit. Four are due Friday 6 November and two on Friday 13 November.</p>
+  <table class="stack">
+    <thead><tr><th>Decision</th><th>Who</th><th>By</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Decision">Retainer price and founding rate.</td><td data-label="Who">Both</td><td data-label="By">Fri 6 Nov</td></tr>
+      <tr><td data-label="Decision">How Liam covers living costs until the first invoices are paid. Options are a setup fee on each new client, part-time marketing work in the meantime, or both.</td><td data-label="Who">Liam</td><td data-label="By">Fri 6 Nov</td></tr>
+      <tr><td data-label="Decision">Employment contract check. Zoë reads hers for clauses on outside work, conflicts of interest and restraint of trade, and tells her employer if it requires that. No current client of her agency gets an audit. A lawyer can read it if the wording is unclear.</td><td data-label="Who">Zoë</td><td data-label="By">Fri 6 Nov</td></tr>
+      <tr><td data-label="Decision">One property client in the first 90 days: yes or no.</td><td data-label="Who">Both</td><td data-label="By">Fri 6 Nov</td></tr>
+      <tr><td data-label="Decision">Shareholders' agreement. It covers 50/50 shares, how the hours gap (Liam 40, Zoë 20) is handled, what happens if one of you leaves, and who owns the brand and the audit templates.</td><td data-label="Who">Both</td><td data-label="By">Fri 13 Nov</td></tr>
+      <tr><td data-label="Decision">The blank in "Strategy with ____" on the positioning slide. A draft: Strategy with a decision every month.</td><td data-label="Who">Zoë</td><td data-label="By">Fri 13 Nov</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Risks</h3>
+  <table class="stack">
+    <thead><tr><th>Risk</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Risk">The fee is close to the ad budget. A R5,000 retainer is 63% of R8,000 in ad spend.</td><td data-label="What to do">Open every proposal with what the audit found. Agree a budget review at month three.</td></tr>
+      <tr><td data-label="Risk">Capacity. Both of you on every account caps you near 9 clients.</td><td data-label="What to do">Track hours per account from week one. Raise the retainer or add help before account 10.</td></tr>
+      <tr><td data-label="Risk">No results yet in the studio's name.</td><td data-label="What to do">Use Liam's own Meta results and the case studies from the two founding clients.</td></tr>
+      <tr><td data-label="Risk">December and January slow replies, because many owners wind down between mid-December and early January.</td><td data-label="What to do">Sign two clients by 11 December and send the January audits with case studies attached.</td></tr>
+      <tr><td data-label="Risk">Zoë's current job overlaps with a prospect.</td><td data-label="What to do">Run the contract check before the first audit. Keep the prospect list clear of her agency's clients.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="block" id="week">
+  <h2>This week</h2>
+  <p class="lead">Eight tasks for Monday 2 November to Friday 13 November.</p>
+  <ul class="todo">
+    <li><span>Zoë and Liam each start the prospect list. <b>Target: 40 names by Wednesday 11 November.</b></span></li>
+    <li><span>Liam writes up one case study from Meta ads he has run.</span></li>
+    <li><span>Liam rewrites his LinkedIn headline and fixes the Open Signal and Sol Pillars dates.</span></li>
+    <li><span>Liam drafts the one-page audit template and Zoë reviews it.</span></li>
+    <li><span>Remove 30+ clients, $50M+ and 2 unicorns scaled from the brand words slide. They come from Zoë's agency's clients. Add your own numbers once you have results.</span></li>
+    <li><span>Copy the four stages from this plan into the "How they find us" slide, which still holds placeholder text.</span></li>
+    <li><span>Replace the phone, email and address on the last slide, which still show template text.</span></li>
+    <li><span>Register the company, open a business bank account and find an accountant. <b>Due Friday 13 November.</b></span></li>
+  </ul>
+  <div class="foot">L+Z Studio · Prepared 30 October 2026</div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copy-msg'), txt=document.getElementById('msg-text');
+  if(!btn||!txt) return;
+  btn.addEventListener('click',function(){
+    function reset(msg){ btn.textContent=msg; setTimeout(function(){ btn.textContent='Copy message'; },2400); }
+    function pick(){
+      try{ var r=document.createRange(); r.selectNodeContents(txt); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){}
+      reset('Text selected, press copy');
+    }
+    try{
+      navigator.clipboard.writeText(txt.innerText.trim()).then(function(){ reset('Copied'); }, pick);
+    }catch(e){ pick(); }
+  });
+})();
+</script>
+
+</body></html>
